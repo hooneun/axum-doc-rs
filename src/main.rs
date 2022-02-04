@@ -11,7 +11,7 @@ async fn main() {
         .route("/plain_text", get(plain_text))
         .route("/json", get(json));
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], port.parse().unwrap()));
+    let addr = SocketAddr::from(([0, 0, 0, 0], port.parse().unwrap()));
 
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
